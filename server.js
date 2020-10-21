@@ -1,6 +1,6 @@
 const express = require("express")
 const app = express();
-
+const PORT = process.env.PORT || 5000
 //import authentication Routes
 const authRoutes = require("./routes/auth");
 
@@ -15,6 +15,6 @@ app.get('/', (req, res) => {
     res.send('Hello World! How Are You Steven, Testing')
   })
    
-app.listen(3000,()=>{
-    console.log("Server is Running on Port 3000");
+app.listen(PORT,()=>{
+    console.log(`Server is Running on Port ${PORT}`);
 })
