@@ -1,12 +1,16 @@
 const express = require("express")
 const app = express();
 const PORT = process.env.PORT || 5000
+const connectDb = require('./config/db');
 //import authentication Routes
-const authRoutes = require("./routes/auth");
+const authRoutes = require("./routes/api/auth");
+
+//connect to database 
+connectDb();
 
 //Routes Middleware
-app.use('/api/user',authRoutes);
-
+app.use('/api/users',require("./routes/api/users"));
+app.use('/api/auth',authRoutes);
 
 app.get('/', (req, res) => {
     res.send('Hello World! How Are You Steven, Testing')
