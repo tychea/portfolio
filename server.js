@@ -7,6 +7,8 @@ const authRoutes = require("./routes/api/auth");
 
 //connect to database 
 connectDb();
+//Init Middleware allow to receive data from body
+app.use(express.json({extended:false}));
 
 //Routes Middleware
 app.use('/api/users',require("./routes/api/users"));
