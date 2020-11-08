@@ -1,0 +1,94 @@
+$mainColor: #270d0d;
+$purple: #878294;
+@import url('https://fonts.googleapis.com/css2?family=Alata&display=swap');
+.App {
+  height: 100%;
+}
+.HomePageContainer {
+  display: flex;
+  height: 100%;
+  flex-wrap: wrap;
+  background-image: url('../Image/background.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  flex-flow: column;
+}
+.Container {
+  min-height: 100vh;
+}
+.TopHomePage {
+  display: flex;
+  padding: 0 50px;
+}
+.logo {
+  height: 70px;
+  margin-top: 10px;
+}
+.navBar {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.navBarButton {
+  font-family: 'Alata', sans-serif;
+  font-size: 15px;
+  background: none;
+  color: lightblue;
+  border: none;
+  font-weight: bold;
+  padding-right: 20px;
+}
+.navBarButton:hover {
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+}
+.BottomHomePage {
+  height: 80%;
+  display: flex;
+}
+.BottomHomePageLeft {
+  flex: 1;
+  display: flex;
+  align-items: flex-end;
+  flex-flow: column;
+  justify-content: center;
+}
+.BottemLeftWrapper {
+  display: flex;
+  justify-content: center;
+  flex-flow: column;
+  align-items: flex-end;
+  margin-right: 10vw;
+}
+.TitleText {
+  color: white;
+  font-size: 4vw;
+  font-family: 'Alata', sans-serif;
+  // margin-top: 20vh;
+}
+.Purple {
+  color: $purple;
+}
+.ButtonExplore {
+  background: linear-gradient(90deg, #886ba8 0%, #8966a5 100%);
+  border-radius: 79px;
+  width: 10vw;
+  height: 4vw;
+  border: none;
+  color: white;
+  font-size: 2vw;
+  font-family: 'Alata', sans-serif;
+}
+.BottomHomePageRight {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.BottomPageRightImage {
+  max-height: 80%;
+  max-width: 80%;
+}
+@import './Component/Navbar/Navbar.scss';

@@ -3,7 +3,7 @@ const app = express();
 const PORT = process.env.PORT || 5000
 const connectDb = require('./config/db');
 //import authentication Routes
-const authRoutes = require("./routes/api/auth");
+const documentRoute = require("./routes/api/document");
 
 //connect to database 
 connectDb();
@@ -12,7 +12,7 @@ app.use(express.json({extended:false}));
 
 //Routes Middleware
 app.use('/api/users',require("./routes/api/users"));
-app.use('/api/auth',authRoutes);
+app.use('/api/documents',documentRoute);
 
 app.get('/', (req, res) => {
     res.send('Hello World! How Are You Steven, Testing')

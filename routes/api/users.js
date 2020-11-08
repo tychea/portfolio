@@ -18,23 +18,21 @@ router.post('/register',async (req,res)=>{
             const token =  await user.generateAuthToken();
             res.status(200).json({token});
         } catch (error) {
-            //checking where the Error Come from MongoDB Unique Or Mongoose Validation Error 
-            //if it true mean it from Mongoose validation Error 
+            // checking where the Error Come from MongoDB Unique Or Mongoose Validation Error 
+            // if it true mean it from Mongoose validation Error 
             const errorFromValidation = 'errors' in error;
             if (!errorFromValidation){
                 return res.status(400).json({
-                    error:{
-                        'email':'Email is Already in used'
+                    errors:{
+                        'email':{
+                            "name": error.name,
+                            "message":'duplicate email'
+                        }
                     },
                     message:'Email is Already in used'
                 })
             }
-            const {errorMessage,message}= errorHandler(error)
-            res.status(400).json({error:
-                errorMessage,
-                message
-            }) 
-            console.log(error)
+            res.status(400).json(error) 
         }
 })
 
@@ -98,11 +96,7 @@ router.patch('/update/info', auth , async (req,res)=>{
                 message:'user not found'
             })
         }
-        const {errorMessage,message}= errorHandler(error)
-        res.status(400).json({error:
-            errorMessage,
-            message
-        }) 
+        res.status(400).json(error) 
     }   
         
 })
@@ -111,13 +105,12 @@ router.patch('/update/info', auth , async (req,res)=>{
 //@desc Update User Password
 //@access Private 
 router.patch('/update/password', auth , async (req,res)=>{
-
     try {
         //req.user.id getting from auth middleware`
         var user = await User.checkPasswordWithId(req.user.id,req.body.oldPassword)
         user.password = req.body.newPassword;
         await user.save();
-        res.status(200).send('update Success')
+        res.status(200).json({success:'update Success'})
     } catch (error) {
         // checking where the Error Come from User.checkPasswordWithId Or Mongoose Validation Error on save
         // if it true mean it from Mongoose validation Error 
@@ -128,15 +121,7 @@ router.patch('/update/password', auth , async (req,res)=>{
                 message:error.message
             })
         }
-        //  res.status(400).json({error:error.message})
-        // const {errorMessage,message}= errorHandler(error)
-        // console.log(errorMessage,message)
-        // return res.status(400).json({error:error.message});
-        const {errorMessage,message}= errorHandler(error)
-        res.status(400).json({error:
-            errorMessage,
-            message
-        })
+        res.status(400).json(error)
     }   
         
 })
