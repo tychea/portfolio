@@ -6,27 +6,36 @@ function App() {
   return (
     <div className="App">
       <div className="HomePageContainer">
-          <div className="TopHomePage" >
+     
+          <header className="TopHomePage" >
               <img className="logo" src={logo}></img>
               <div className="navBar">
-                <a className="navBarButton">Register</a>
-                <a className="navBarButton">Login</a>
-                    {/* <button className="navBarButton">Register</button>
-                    <button className="navBarButton">Login</button> */}
+                <a className="navBarButton" href="/#">Register</a>
+                <a className="navBarButton" href="/# ">Login</a>
               </div>
-            </div>
+              <div className="burger">
+                  <div className="line1"></div>
+                  <div className="line2"></div>
+                  <div className="line3"></div>
+              </div>
+            </header>
             <div className="BottomHomePage">
                 <div className="BottomHomePageLeft">
                   <div className="BottemLeftWrapper">
                     <div className="TitleText">Organize Your</div>
                     <div className="TitleText Purple">Documents</div>
-                    <button className="ButtonExplore">Explore</button>    
+                    <a className="ButtonExplore"onClick={()=>console.log("hello How are You")}>Explore</a>   
                   </div>                       
                 </div>
                 <div className="BottomHomePageRight">
                     <img className="BottomPageRightImage" src={manPhoto}></img>
                 </div>
-          </div>
+                <div className="DropDownMenu">
+                  <a className="DropDownMenuButton" href="/#">Register</a>
+                  <a className="DropDownMenuButton" href="/# ">Login</a>
+                </div>
+            </div>
+
         </div> 
     </div>
   );
