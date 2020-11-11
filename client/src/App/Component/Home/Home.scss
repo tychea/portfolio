@@ -1,0 +1,55 @@
+.BottomHomePage {
+  height: 100%;
+  display: flex;
+}
+.BottomHomePageLeft {
+  flex: 1;
+  display: flex;
+  align-items: flex-end;
+  flex-flow: column;
+  justify-content: center;
+}
+.BottemLeftWrapper {
+  display: flex;
+  justify-content: center;
+  flex-flow: column;
+  align-items: flex-end;
+  margin-right: 10vw;
+}
+.TitleText {
+  color: white;
+  font-size: 4vw;
+  font-family: 'Alata', sans-serif;
+  // margin-top: 20vh;
+}
+.Purple {
+  color: $purple;
+}
+.ButtonExplore {
+  background: linear-gradient(90deg, #886ba8 0%, #8966a5 100%);
+  border-radius: 79px;
+  color: white;
+  font-size: 2vw;
+  border: none;
+  font-family: 'Alata', sans-serif;
+  padding: 1vw 3vw;
+  -webkit-transition: all 0.5s 0s ease;
+  -moz-transition: all 0.5s 0s ease;
+  -o-transition: all 0.5s 0s ease;
+  transition: all 0.5s 0s ease;
+}
+.ButtonExplore:hover {
+  padding: 1vw 4vw;
+  text-decoration: none;
+  cursor: pointer;
+}
+.BottomHomePageRight {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.BottomPageRightImage {
+  max-height: 80%;
+  max-width: 80%;
+}

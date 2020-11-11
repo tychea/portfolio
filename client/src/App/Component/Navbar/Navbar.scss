@@ -1,3 +1,58 @@
-.headerBackground {
-  background-color: $mainColor;
+.TopHomePage {
+  display: flex;
+  justify-content: space-between;
+}
+.logo {
+  height: 70px;
+  margin-top: 10px;
+}
+.navBar {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.navBarButton {
+  font-family: 'Alata', sans-serif;
+  font-size: 15px;
+  background: none;
+  color: lightblue;
+  border: none;
+  font-weight: bold;
+  padding-right: 20px;
+  -webkit-transition: all 0.5s 0s ease;
+  -moz-transition: all 0.5s 0s ease;
+  -o-transition: all 0.5s 0s ease;
+  transition: all 0.5s 0s ease;
+}
+.navBarButton:hover {
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.navBarButton:focus {
+  outline: none;
+  color: white;
+}
+
+.burger {
+  display: none;
+}
+
+.burger div {
+  width: 25px;
+  height: 3px;
+  background: lightblue;
+  margin: 3px;
+}
+
+@media screen and (max-width: 768px) {
+  .burger {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+  }
+  .navBar {
+    display: none;
+  }
 }
