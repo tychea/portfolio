@@ -1,23 +1,50 @@
 import './App.scss';
 import Navbar from './Component/Navbar/Navbar';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import Home from './Component/Home/Home';
 import Login from './Component/Login/Login';
 import Register from './Component/Register/Register';
-import {BrowserRouter as Router,Switch,Route} from 'react-router-dom';
+import DashBoard from './Component/DashBoard/DashBoard';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Redirect,
+} from 'react-router-dom';
+import { useState, useEffect } from 'react';
+
 function App() {
+  //when application start check for token
+  const [token, setToken] = useState(localStorage.getItem('token'));
+
+  const updateToken = (token) => {
+    setToken(token);
+  };
+
+  useEffect(() => {
+    console.log('Token', token);
+  }, [token]);
+
   return (
     <Router>
-      <div className="App">
-        <Navbar/>
+      <div className='App'>
+        <Navbar token={token} updateToken={updateToken} />
         <Switch>
-          <Route path="/" exact component={Home}/>
-          <Route path="/login"  component={Login}/>
-          <Route path="/register" component={Register}/>
+          <Route exact path='/'>
+            <Home updateToken={updateToken} />
+          </Route>
+          <Route exact path='/login'>
+            <Login updateToken={updateToken} />
+          </Route>
+          <Route exact path='/register'>
+            <Register updateToken={updateToken} />
+          </Route>
+          <Route exact path='/dashboard'>
+            <DashBoard />
+          </Route>
+          <Redirect exact from='*' to='/' />
         </Switch>
       </div>
     </Router>
-    
   );
 }
 

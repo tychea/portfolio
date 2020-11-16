@@ -1,0 +1,29 @@
+POST http://localhost:5000/api/users/register
+content-type: application/json
+
+{
+    "name": "sample",
+    "email": "ty@gmail.com",
+    "password": "123456789"
+}
+###
+POST http://localhost:5000/api/users/login
+content-type: application/json
+
+{
+     "name": "sample",
+    "email": "ty@gmail.com",
+    "password": "123456789"
+}
+
+###
+GET http://localhost:5000/api/documents
+content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNWZiMTRjNjRhM2U1ZjI5YzA2MzgwYWU1In0sImlhdCI6MTYwNTQ1NTA4MCwiZXhwIjoxNjA1NDU1MTQwfQ.s9aPjKCyEPiJUgvDWdjl9LAlb992I_eoMTZVXlX2O9c
+
+{
+    "name": "sample",
+    "email": "tycheaty@gmail.com",
+    "password": "123456789"
+}
+

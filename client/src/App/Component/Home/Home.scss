@@ -19,7 +19,7 @@
 .TitleText {
   color: white;
   font-size: 4vw;
-  font-family: 'Alata', sans-serif;
+  font-family: $AlataFont;
   // margin-top: 20vh;
 }
 .Purple {
@@ -31,7 +31,7 @@
   color: white;
   font-size: 2vw;
   border: none;
-  font-family: 'Alata', sans-serif;
+  font-family: $AlataFont;
   padding: 1vw 3vw;
   -webkit-transition: all 0.5s 0s ease;
   -moz-transition: all 0.5s 0s ease;

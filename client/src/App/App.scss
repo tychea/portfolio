@@ -1,6 +1,12 @@
 $mainColor: #270d0d;
 $purple: #878294;
+$red: #82060c;
 @import url('https://fonts.googleapis.com/css2?family=Alata&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+$AlataFont: 'Alata', sans-serif;
+$NunitoFont: 'Nunito', sans-serif;
+$FredokaOneFont: 'Fredoka One', cursive;
 .App {
   display: flex;
   height: 100%;
