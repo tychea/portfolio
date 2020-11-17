@@ -1,6 +1,5 @@
 const express = require('express');
 const app = express();
-const cookieParser = require('cookie-parser');
 const PORT = process.env.PORT || 5000;
 const connectDb = require('./config/db');
 //import authentication Routes
@@ -10,7 +9,6 @@ const documentRoute = require('./routes/api/document');
 connectDb();
 //Init Middleware allow to receive data from body
 app.use(express.json({ extended: false }));
-app.use(cookieParser());
 //Routes Middleware
 app.use('/api/users', require('./routes/api/users'));
 app.use('/api/documents', documentRoute);

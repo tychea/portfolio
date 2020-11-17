@@ -6,13 +6,8 @@ import axios from 'axios';
 function DashBoard(props) {
   const [selectedMenu, setSelectedMenu] = useState('docs');
   const updateSelectedMenu = (event) => {
-    // setSelectedMenu(event.target.name);
-    console.log('Button', event.currentTarget.name);
+    setSelectedMenu(event.currentTarget.name);
   };
-  // const data = (event) => {
-  //   // setSelectedMenu(event.target.name);
-  //   console.log('data', event.currentTarget);
-  // };
   const fectData = async () => {
     try {
       const config = {
