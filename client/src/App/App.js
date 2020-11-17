@@ -30,7 +30,7 @@ function App() {
         <Navbar token={token} updateToken={updateToken} />
         <Switch>
           <Route exact path='/'>
-            <Home updateToken={updateToken} />
+            <Home />
           </Route>
           <Route exact path='/login'>
             <Login updateToken={updateToken} />
@@ -39,7 +39,7 @@ function App() {
             <Register updateToken={updateToken} />
           </Route>
           <Route exact path='/dashboard'>
-            <DashBoard />
+            <DashBoard updateToken={updateToken} />
           </Route>
           <Redirect exact from='*' to='/' />
         </Switch>

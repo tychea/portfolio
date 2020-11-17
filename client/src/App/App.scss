@@ -15,10 +15,11 @@ $FredokaOneFont: 'Fredoka One', cursive;
   background-repeat: no-repeat;
   background-size: cover;
   flex-flow: column;
-  padding: 0 50px;
+  padding: 0 50px 50px 50px;
 }
 
 @import './Component/Navbar/Navbar.scss';
 @import './Component/Home/Home.scss';
 @import './Component/Register/Register.scss';
 @import './Component/Login/Login.scss';
+@import './Component/DashBoard/DashBoard.scss';

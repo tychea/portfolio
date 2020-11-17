@@ -63,7 +63,7 @@ UserSchema.methods.generateAuthToken = async function () {
     },
   };
   const token = await jwt.sign(payload, config.get('access_Token_Secret'), {
-    expiresIn: 60,
+    expiresIn: 259200,
   });
   return token;
 };
