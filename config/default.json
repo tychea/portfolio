@@ -1,0 +1,4 @@
+{
+  "mongoURI": "mongodb+srv://steventy:040818@cluster0.dojid.mongodb.net/<dbname>?retryWrites=true&w=majority",
+  "access_Token_Secret": "345b394b6ad1247528d1f0464b889f22c8e2a2cd4515e6f68466178d42f3c64a664b2108337e1c63adc0e326b75485b12e43f998cfe1d5eebb84ea4b64dd8a8a"
+}
