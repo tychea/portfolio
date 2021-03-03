@@ -1,39 +1,18 @@
+import Logo from '../../../../Image/Logo.png';
 function LeftSideMenu(props) {
   return (
     <div className='leftSide-wrapper'>
-      <button
-        onClick={props.updateSelectedMenu}
-        className='menu'
-        name='docs'
-        value='steven'
-      >
-        <i className='fas fa-file'></i>
-        <p>Documents</p>
-      </button>
-      <button
-        onClick={props.updateSelectedMenu}
-        className='menu'
-        name='add_docs'
-      >
-        <i className='fas fa-file-medical'></i>
-        <p>Add Doc</p>
-      </button>
-      <button
-        onClick={props.updateSelectedMenu}
-        className='menu'
-        name='edit_docs'
-      >
-        <i className='fas fa-file-signature'></i>
-        <p>Edit Doc</p>
-      </button>
-      <button
-        onClick={props.updateSelectedMenu}
-        className='menu'
-        name='edit_docs'
-      >
-        <i className='fas fa-sliders-h fa-rotate-90'></i>
-        <p>Setting</p>
-      </button>
+      <img className='logoMenu' src={Logo} alt='Logo'></img>
+      <div className={props.selectedMenu === 'folders' ? 'btn_menu selectMenu' : 'btn_menu'} id='folders' onClick={props.updateSelectedMenu}>
+        <i class="fas fa-folder-open"></i>
+        <div>Folders</div>
+      </div>
+
+      <div className={props.selectedMenu === 'upload' ? 'btn_menu selectMenu' : 'btn_menu'} name='upload' id='upload' onClick={props.updateSelectedMenu}>
+        <i class="fas fa-cloud-upload-alt"></i>
+        <div>Upload</div>
+      </div>
+
     </div>
   );
 }

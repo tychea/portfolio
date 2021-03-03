@@ -27,15 +27,17 @@ function App() {
   return (
     <Router>
       <div className='App'>
-        <Navbar token={token} updateToken={updateToken} />
         <Switch>
           <Route exact path='/'>
+            <Navbar token={token} updateToken={updateToken} />
             <Home />
           </Route>
           <Route exact path='/login'>
+            <Navbar token={token} updateToken={updateToken} />
             <Login updateToken={updateToken} />
           </Route>
           <Route exact path='/register'>
+            <Navbar token={token} updateToken={updateToken} />
             <Register updateToken={updateToken} />
           </Route>
           <Route exact path='/dashboard'>

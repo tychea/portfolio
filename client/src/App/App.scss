@@ -1,25 +1,49 @@
-$mainColor: #270d0d;
+$mainColor: #1C4941;
+$secondaryColor:#489687;
+$thirdColor:#328274;
+$yellowColor:#FAF19E;
+$greyColor:rgba(254, 254, 254, 0.8);
 $purple: #878294;
 $red: #82060c;
 @import url('https://fonts.googleapis.com/css2?family=Alata&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@600&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 $AlataFont: 'Alata', sans-serif;
 $NunitoFont: 'Nunito', sans-serif;
 $FredokaOneFont: 'Fredoka One', cursive;
+$PoppinFont: 'Poppins', sans-serif;
+$RobotoFont:'Roboto', sans-serif;
+
+//Setting Input Field Style
+
+
+
+//lanscape mode
 .App {
-  display: flex;
   height: 100%;
-  flex-wrap: wrap;
-  background-image: url('../Image/background.png');
-  background-repeat: no-repeat;
-  background-size: cover;
+  width: 100%;
+  background: linear-gradient(253.76deg, #548880 -19.5%, #1C4941 76.02%);
+  // padding:0 100px;
+  display: flex;
   flex-flow: column;
-  padding: 0 50px 50px 50px;
+  padding:10px 100px;
 }
 
+//Mobile,Tablet Potrait Mode
+@media (orientation: portrait) {
+  .App {
+    padding:10px 20px;
+  }
+}
+@media only screen and (max-width: 850px)  {
+  .App {
+    padding:10px 20px;
+  }
+}
 @import './Component/Navbar/Navbar.scss';
 @import './Component/Home/Home.scss';
 @import './Component/Register/Register.scss';
 @import './Component/Login/Login.scss';
-@import './Component/DashBoard/DashBoard.scss';
+ @import './Component/DashBoard/DashBoard.scss';

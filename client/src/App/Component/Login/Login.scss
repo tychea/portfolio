@@ -1,0 +1,17 @@
+#rightHand{
+    transform-origin: center;
+
+transform-box: fill-box;
+animation: moveRightHand 2s infinite;
+}
+@keyframes moveRightHand{
+    0%{
+        transform: rotate(0) translate(0);
+    }
+    50%{
+        transform: rotate(45deg) translate(-25px,-40px);
+    }
+    100%{
+        transform: rotate(0) translate(0);
+    }
+}

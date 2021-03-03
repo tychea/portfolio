@@ -4,9 +4,13 @@ import LeftSideMenu from './LeftSideMenu/LeftSideMenu';
 import RightSideMenu from './RightSideMenu/RightSideMenu';
 import axios from 'axios';
 function DashBoard(props) {
-  const [selectedMenu, setSelectedMenu] = useState('docs');
+  const [selectedMenu, setSelectedMenu] = useState('folders');
   const updateSelectedMenu = (event) => {
-    setSelectedMenu(event.currentTarget.name);
+    setSelectedMenu(event.currentTarget.id);
+  };
+  const logout = () => {
+    localStorage.removeItem('token');
+    props.updateToken(localStorage.getItem('token'));
   };
   const fectData = async () => {
     try {
@@ -31,8 +35,9 @@ function DashBoard(props) {
 
   return (
     <div className='content-table'>
-      <LeftSideMenu updateSelectedMenu={updateSelectedMenu} />
-      <RightSideMenu />
+      {/* <button onClick={logout}>Logout</button> */}
+      <LeftSideMenu updateSelectedMenu={updateSelectedMenu} selectedMenu={selectedMenu} />
+      <RightSideMenu selectedMenu={selectedMenu} />
       {/* <button
         value='blue'
         name='steven'

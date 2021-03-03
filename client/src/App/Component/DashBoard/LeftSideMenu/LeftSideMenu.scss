@@ -1,40 +1,52 @@
+
 .leftSide-wrapper {
   height: 100%;
-  width: 150px;
+  width: 200px;
   display: flex;
   flex-flow: column;
-  justify-content: space-around;
-  align-items: center;
+   align-items: center;
+  position:absolute;
+  background-color: $mainColor;
+ }
 
-  .menu {
-    width: 110px;
-    height: 110px;
-    display: flex;
-    flex-flow: column;
-    justify-content: center;
-    align-items: center;
-    border-radius: 26px;
-    background: none;
-    border: none;
-    -webkit-transition: all 0.5s 0s ease;
-    -moz-transition: all 0.5s 0s ease;
-    -o-transition: all 0.5s 0s ease;
-    transition: all 0.5s 0s ease;
-    &:hover {
+.btn_menu{
+  width: 180px;
+  display: flex;
+  height: 40px;
+  padding-left: 40px;
+  align-items: center;
+  border-radius: 6px;
+   &:hover {
       cursor: pointer;
       text-decoration: none;
     }
-    &:focus {
-      background-color: #514358;
-    }
-    i {
-      color: white;
-      font-size: 30px;
-    }
-    p {
-      color: white;
-      font-family: $AlataFont;
-      margin: 0;
-    }
+  i{
+    font-size: 18px;
+    color: white;
+
   }
+  div{
+    color:white;
+    font-family: $PoppinFont;
+    font-size: 14px;
+    margin-left: 10px;
+    font-weight: 500;
+    user-select: none;
+  }
+}
+.logoMenu{
+  width: 100px;
+  margin-top: 10px;
+  margin-bottom: 100px;
+}
+.selectMenu{
+  background-color: $thirdColor;
+}
+
+@media only screen and (min-width: 993px){
+  .leftSide-wrapper {
+    position:relative;
+
+   }
+  
 }

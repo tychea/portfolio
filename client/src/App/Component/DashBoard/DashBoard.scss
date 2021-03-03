@@ -1,9 +1,12 @@
 .content-table {
   width: 100%;
-  background: #6f6e8a;
+  background-color: $mainColor;
   height: 100%;
   max-height: 100%;
   display: flex;
+  position:absolute;
+  top:0;
+  left:0;
 }
 
 @import './LeftSideMenu/LeftSideMenu.scss';

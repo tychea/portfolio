@@ -1,7 +1,9 @@
-function RightSideMenu() {
+function RightSideMenu(props) {
   return (
     <div className='rightSide-wrapper'>
-      <h1>Documents</h1>
+      {props.selectedMenu === 'folders' ?
+        <div>Folders</div> : <div>Upload</div>
+      }
     </div>
   );
 }

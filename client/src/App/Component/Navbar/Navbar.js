@@ -1,41 +1,37 @@
-import logo from '../../../Image/Logo.svg';
-
+import Logo from '../../../Image/Logo.png';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import dotStyle from '../../../Image/dotStyle.png';
 function Navbar(props) {
-  const logout = () => {
-    localStorage.removeItem('token');
-    props.updateToken(localStorage.getItem('token'));
-  };
+  const [showMenu, setShowMenu] = useState(false);
+  const toggleShowMenu = () => setShowMenu(!showMenu);
   return (
-    <header className='TopHomePage'>
-      <Link to='/'>
-        <img className='logo' src={logo} alt='Logo'></img>
-      </Link>
-      {props.token ? (
-        <div className='navBar'>
-          <Link to='/'>
-            <button onClick={logout} className='navBarButton'>
-              Logout
-            </button>
-          </Link>
-        </div>
-      ) : (
-        <div className='navBar'>
-          <Link to='/register'>
-            <button className='navBarButton'>Register</button>
-          </Link>
-          <Link to='/login'>
-            <button className='navBarButton'>Login</button>
-          </Link>
-        </div>
-      )}
 
-      <div className='burger'>
-        <div className='line1'></div>
-        <div className='line2'></div>
-        <div className='line3'></div>
+    <nav >
+      <div className="nav-wrapper" >
+        <Link style={{ height: '80%' }} to='/'>
+          <img className='logo' src={Logo} alt='Logo'></img>
+        </Link>
+        <div className={showMenu ? 'portrait-nav-background' : 'portrait-nav-background hide'}></div>
+        <ul className={showMenu ? 'nav-menu nav-menu-portrait' : 'nav-menu'}>
+          <li><a href="sass.html">About</a></li>
+          <li><Link to='/register'><a >Register</a></Link></li>
+
+          <li><Link to='/login'><a >Login</a></Link></li>
+
+
+        </ul>
+
+        <div className='menu_wrapper' onClick={toggleShowMenu}>
+          <div className={showMenu ? 'bar1Change' : null}></div>
+          <div className={showMenu ? 'bar2Change' : null}></div>
+          <div className={showMenu ? 'bar3Change' : null}></div>
+        </div>
       </div>
-    </header>
+      <img className='dotStyle' src={dotStyle} alt='dotStyle' ></img>
+      <img className='dotStyle2' src={dotStyle} alt='dotStyle' ></img>
+
+    </nav>
   );
 }
 
